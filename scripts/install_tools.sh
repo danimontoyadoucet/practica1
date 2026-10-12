@@ -21,7 +21,7 @@ apt install goaccess -y
 apt install php-mbstring php-zip php-gd php-curl php-xml -y
 
 # Instalamos phpMyAdmin
-DEBIAN_FRONTEND=noninteractive apt install phpmyadmin -
+DEBIAN_FRONTEND=noninteractive apt install phpmyadmin -y
 
 # Instalamos Adminer
 apt install adminer -y
