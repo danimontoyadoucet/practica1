@@ -41,3 +41,20 @@ apache2ctl configtest
 
 # Recargamos Apache
 systemctl reload apache2
+
+# Creamos el directorio protegido
+mkdir -p "$PRIVATE_DIR"
+
+# Copiamos el archivo .htaccess
+cp "$SCRIPT_DIR/../htaccess/.htaccess" "$PRIVATE_DIR/"
+
+# Creamos una página de prueba
+echo "<h1>Bienvenido al directorio privado</h1>" > "$PRIVATE_DIR/index.html"
+
+# Instalamos la herramienta htpasswd
+apt install apache2-utils -y
+
+# Creamos el usuario para el directorio protegido
+if [ ! -f /etc/apache2/.htpasswd ]; then
+    htpasswd -c /etc/apache2/.htpasswd "$HTACCESS_USER"
+fi
