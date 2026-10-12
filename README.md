@@ -33,6 +33,20 @@ Los puertos necesarios para la práctica son SSH (22), HTTP (80) y HTTPS (443).
 
 ![Instancia EC2](img/image01.png)
 
+### Configuración del grupo de seguridad
+
+Se han configurado las reglas de entrada para permitir conexiones SSH (22), HTTP (80) y HTTPS (443).
+
+![Reglas de entrada AWS](img/image10.png)
+
+### Comprobación del acceso mediante la IP elástica
+
+Se ha comprobado que el servidor web es accesible desde Internet mediante la dirección IP elástica asignada a la instancia EC2.
+
+Al acceder a `http://52.207.120.75`, Apache ejecuta correctamente el archivo `index.php`, mostrando la información de PHP.
+
+![Acceso mediante IP elástica](img/image11.png)
+
 ## 3. Instalación de Apache
 
 Para instalar Apache se utiliza el siguiente comando:
